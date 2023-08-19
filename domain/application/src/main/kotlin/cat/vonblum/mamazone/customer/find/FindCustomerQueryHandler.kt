@@ -1,7 +1,7 @@
 package cat.vonblum.mamazone.customer.find
 
-import cat.vonblum.mamazone.customer.aggregate.CustomerId
-import cat.vonblum.mamazone.customer.port.CustomerRepository
+import cat.vonblum.mamazone.customer.CustomerId
+import cat.vonblum.mamazone.customer.CustomerRepository
 import cat.vonblum.mamazone.shared.domain.bus.query.QueryHandler
 
 class FindCustomerQueryHandler(private val customerRepository: CustomerRepository) : QueryHandler {

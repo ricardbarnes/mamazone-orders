@@ -1,12 +1,12 @@
 package cat.vonblum.mamazone.product.modify
 
-import cat.vonblum.mamazone.product.aggregate.ProductId
-import cat.vonblum.mamazone.product.aggregate.ProductImage
-import cat.vonblum.mamazone.product.aggregate.ProductImageDescription
-import cat.vonblum.mamazone.product.aggregate.ProductImagePath
-import cat.vonblum.mamazone.product.aggregate.ProductImageTitle
-import cat.vonblum.mamazone.product.aggregate.ProductName
-import cat.vonblum.mamazone.product.port.ProductRepository
+import cat.vonblum.mamazone.product.ProductId
+import cat.vonblum.mamazone.product.ProductImage
+import cat.vonblum.mamazone.product.ProductImageDescription
+import cat.vonblum.mamazone.product.ProductImagePath
+import cat.vonblum.mamazone.product.ProductImageTitle
+import cat.vonblum.mamazone.product.ProductName
+import cat.vonblum.mamazone.product.ProductRepository
 import cat.vonblum.mamazone.shared.domain.bus.command.CommandHandler
 import cat.vonblum.mamazone.shared.domain.bus.event.EventBus
 import java.net.URI

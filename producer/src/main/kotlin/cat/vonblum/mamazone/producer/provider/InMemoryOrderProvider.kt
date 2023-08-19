@@ -1,7 +1,7 @@
 package cat.vonblum.mamazone.producer.provider
 
-import cat.vonblum.mamazone.order.aggregate.Order
-import cat.vonblum.mamazone.order.port.OrderProvider
+import cat.vonblum.mamazone.order.Order
+import cat.vonblum.mamazone.order.OrderProvider
 
 class InMemoryOrderProvider : OrderProvider {
     override fun send(order: Order) {

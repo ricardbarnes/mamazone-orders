@@ -1,7 +1,7 @@
 package cat.vonblum.mamazone.product.find
 
-import cat.vonblum.mamazone.product.aggregate.ProductId
-import cat.vonblum.mamazone.product.port.ProductRepository
+import cat.vonblum.mamazone.product.ProductId
+import cat.vonblum.mamazone.product.ProductRepository
 import cat.vonblum.mamazone.shared.domain.bus.query.QueryHandler
 
 class FindProductQueryHandler(private val productRepository: ProductRepository) : QueryHandler {

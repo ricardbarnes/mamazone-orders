@@ -1,15 +1,15 @@
 package cat.vonblum.mamazone.customer.create
 
-import cat.vonblum.mamazone.customer.aggregate.Customer
-import cat.vonblum.mamazone.customer.aggregate.CustomerAddress
-import cat.vonblum.mamazone.customer.aggregate.CustomerAddressCountry
-import cat.vonblum.mamazone.customer.aggregate.CustomerAddressLine
-import cat.vonblum.mamazone.customer.aggregate.CustomerAddressPostcode
-import cat.vonblum.mamazone.customer.aggregate.CustomerEmail
-import cat.vonblum.mamazone.customer.aggregate.CustomerId
-import cat.vonblum.mamazone.customer.aggregate.CustomerName
-import cat.vonblum.mamazone.customer.aggregate.CustomerSurname
-import cat.vonblum.mamazone.customer.port.CustomerRepository
+import cat.vonblum.mamazone.customer.Customer
+import cat.vonblum.mamazone.customer.CustomerAddress
+import cat.vonblum.mamazone.customer.CustomerAddressCountry
+import cat.vonblum.mamazone.customer.CustomerAddressLine
+import cat.vonblum.mamazone.customer.CustomerAddressPostcode
+import cat.vonblum.mamazone.customer.CustomerEmail
+import cat.vonblum.mamazone.customer.CustomerId
+import cat.vonblum.mamazone.customer.CustomerName
+import cat.vonblum.mamazone.customer.CustomerSurname
+import cat.vonblum.mamazone.customer.CustomerRepository
 import cat.vonblum.mamazone.shared.domain.bus.command.CommandHandler
 import cat.vonblum.mamazone.shared.domain.bus.event.EventBus
 

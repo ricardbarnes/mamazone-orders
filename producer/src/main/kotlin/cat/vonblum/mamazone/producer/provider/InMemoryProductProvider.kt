@@ -1,7 +1,7 @@
 package cat.vonblum.mamazone.producer.provider
 
-import cat.vonblum.mamazone.product.aggregate.Product
-import cat.vonblum.mamazone.product.port.ProductProvider
+import cat.vonblum.mamazone.product.Product
+import cat.vonblum.mamazone.product.ProductProvider
 
 class InMemoryProductProvider : ProductProvider {
 

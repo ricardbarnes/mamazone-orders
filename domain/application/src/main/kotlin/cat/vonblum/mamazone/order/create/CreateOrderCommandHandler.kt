@@ -1,10 +1,10 @@
 package cat.vonblum.mamazone.order.create
 
-import cat.vonblum.mamazone.customer.aggregate.CustomerId
-import cat.vonblum.mamazone.order.aggregate.Order
-import cat.vonblum.mamazone.order.aggregate.OrderId
-import cat.vonblum.mamazone.order.port.OrderRepository
-import cat.vonblum.mamazone.product.aggregate.ProductId
+import cat.vonblum.mamazone.customer.CustomerId
+import cat.vonblum.mamazone.order.Order
+import cat.vonblum.mamazone.order.OrderId
+import cat.vonblum.mamazone.order.OrderRepository
+import cat.vonblum.mamazone.product.ProductId
 import cat.vonblum.mamazone.shared.domain.bus.command.CommandHandler
 import cat.vonblum.mamazone.shared.domain.bus.event.EventBus
 import java.util.stream.Collectors

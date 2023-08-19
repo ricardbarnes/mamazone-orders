@@ -1,10 +1,10 @@
 package cat.vonblum.mamazone.customer.modify
 
-import cat.vonblum.mamazone.customer.aggregate.CustomerEmail
-import cat.vonblum.mamazone.customer.aggregate.CustomerId
-import cat.vonblum.mamazone.customer.aggregate.CustomerName
-import cat.vonblum.mamazone.customer.aggregate.CustomerSurname
-import cat.vonblum.mamazone.customer.port.CustomerRepository
+import cat.vonblum.mamazone.customer.CustomerEmail
+import cat.vonblum.mamazone.customer.CustomerId
+import cat.vonblum.mamazone.customer.CustomerName
+import cat.vonblum.mamazone.customer.CustomerSurname
+import cat.vonblum.mamazone.customer.CustomerRepository
 import cat.vonblum.mamazone.shared.domain.bus.command.CommandHandler
 import cat.vonblum.mamazone.shared.domain.bus.event.EventBus
 
