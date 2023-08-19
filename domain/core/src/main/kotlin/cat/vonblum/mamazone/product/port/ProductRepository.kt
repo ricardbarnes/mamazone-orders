@@ -9,10 +9,8 @@ interface ProductRepository {
 
     fun save(product: Product)
 
-    @Throws(ProductNotFoundError::class)
     fun findById(productId: ProductId): Product
 
-    @Throws(ProductNotFoundError::class)
     fun deleteById(productId: ProductId)
 
 }
