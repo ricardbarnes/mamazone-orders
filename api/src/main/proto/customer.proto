@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package cat.vonblum.mamazone.api;
+
+service CustomerService {
+    rpc CreateCustomer (CreateCustomerRequest) returns (CreateCustomerResponse);
+    rpc DeleteCustomer (DeleteCustomerRequest) returns (DeleteCustomerResponse);
+    rpc FindCustomer (FindCustomerRequest) returns (FindCustomerResponse);
+    rpc ModifyCustomer (ModifyCustomerRequest) returns (ModifyCustomerResponse);
+}
+
+message Customer {
+    string email = 1;
+    string name = 2;
+    string surname = 3;
+    CustomerAddress address = 4;
+}
+
+message CustomerAddress {
+    string line = 1;
+    string postcode = 2;
+    string country = 3;
+}
+
+message CreateCustomerRequest {
+    string email = 1;
+    string name = 2;
+    string surname = 3;
+    CustomerAddress address = 4;
+}
+
+message CreateCustomerResponse {
+    int64 id = 1;
+    int32 status_code = 2;
+}
+
+message DeleteCustomerRequest {
+    string id = 1;
+}
+
+message DeleteCustomerResponse {
+    int64 status_code = 1;
+}
+
+message FindCustomerRequest {
+    int64 id = 1;
+}
+
+message FindCustomerResponse {
+    Customer customer = 1;
+    int32 status_code = 2;
+}
+
+message ModifyCustomerRequest {
+    int64 id = 1;
+    string email = 2;
+    string name = 3;
+    string surname = 4;
+    CustomerAddress address = 5;
+}
+
+message ModifyCustomerResponse {
+    int32 status_code = 1;
+}

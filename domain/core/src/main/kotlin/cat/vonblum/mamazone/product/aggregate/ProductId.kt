@@ -1,0 +1,5 @@
+package cat.vonblum.mamazone.product.aggregate
+
+import cat.vonblum.mamazone.shared.domain.valueobject.Id
+
+class ProductId(override val value: Int) : Id(value)
