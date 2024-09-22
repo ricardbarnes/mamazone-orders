@@ -30,7 +30,7 @@ class Product(
     }
 
     private fun recordModification() = this.record(
-        ProductModificatedEvent(
+        ProductModificationEvent(
             this.id.value, this.name.value, mapOf(
                 "imageTitle" to this.image.path.value,
                 "imageDescription" to this.image.title.value,

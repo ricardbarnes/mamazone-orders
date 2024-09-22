@@ -11,7 +11,6 @@ class Order(
     private var customerId: CustomerId,
     private var productIds: List<ProductId>
 ) : AggregateRoot() {
-
     companion object {
 
         fun create(
