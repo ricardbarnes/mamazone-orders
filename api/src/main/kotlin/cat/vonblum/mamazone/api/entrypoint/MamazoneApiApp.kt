@@ -7,5 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 class MamazoneApp
 
 fun main(args: Array<String>) {
+
     SpringApplication.run(MamazoneApp::class.java, *args);
+
 }
