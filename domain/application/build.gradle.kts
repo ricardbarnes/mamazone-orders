@@ -12,4 +12,5 @@ repositories {
 dependencies {
     implementation(project(":domain:core"))
     implementation(project(":shared:domain"))
+    implementation(project(":shared:infrastructure"))
 }
