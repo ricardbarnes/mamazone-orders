@@ -1,4 +1,4 @@
-rootProject.name = "mamazone"
+rootProject.name = "mamazone-orders"
 
 include(
     ":api",
