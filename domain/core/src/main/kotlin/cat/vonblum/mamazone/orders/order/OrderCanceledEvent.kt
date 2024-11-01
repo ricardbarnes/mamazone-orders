@@ -1,11 +1,10 @@
 package cat.vonblum.mamazone.orders.order
 
-import cat.vonblum.mamazone.orders.shared.domain.bus.event.Event
+import cat.vonblum.mamazone.orders.shared.domain.event.Event
 import java.time.Instant
-import java.util.UUID
 
 class OrderCanceledEvent(
     override val aggregateId: Int,
-    override val eventId: UUID = UUID.randomUUID(),
+    override var eventId: Int = Event.INITIAL_ID,
     override val occurredOn: Instant = Instant.now()
 ) : Event

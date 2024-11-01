@@ -1,15 +1,15 @@
 package cat.vonblum.mamazone.orders.shared.domain.aggregate
 
-import cat.vonblum.mamazone.orders.shared.domain.bus.event.Event
+import cat.vonblum.mamazone.orders.shared.domain.event.Event
 
 abstract class AggregateRoot {
 
-    private lateinit var events: MutableList<Event>
+    private var events: MutableList<Event> = mutableListOf()
 
-    fun pullEvents(): List<Event> = this.events.also { this.events = mutableListOf() }
+    fun pullEvents(): List<Event> = events.also { events = mutableListOf() }
 
     fun record(event: Event) {
-        this.events.add(event)
+        events.add(event)
     }
 
 }

@@ -3,6 +3,7 @@ version = "0.0.1-SNAPSHOT"
 
 plugins {
     kotlin ("jvm") version ("2.0.21")
+    kotlin("plugin.spring") version ("2.0.21")
 }
 
 repositories {
@@ -12,9 +13,6 @@ repositories {
 dependencies {
     implementation(project(":shared:domain"))
     implementation(project(":domain:core"))
-    implementation("org.springframework.boot:spring-boot-starter:3.3.4")
-}
-
-tasks.getByName<Test>("test") {
-    useJUnitPlatform()
+    implementation(project(":domain:application"))
+    implementation("jakarta.annotation:jakarta.annotation-api:2.1.1")
 }

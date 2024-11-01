@@ -14,5 +14,9 @@ repositories {
 
 dependencies {
     implementation(project(":domain:core"))
+    implementation(project(":domain:application"))
+    implementation(project(":shared:domain"))
+    implementation(project(":shared:infrastructure"))
     implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-web")
 }

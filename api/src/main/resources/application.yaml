@@ -1,0 +1,13 @@
+server:
+  port: 8001
+
+producer:
+  bus:
+    command:
+      socket:
+        host: localhost
+        port: 10001
+    query:
+      socket:
+        host: localhost
+        port: 10002

@@ -1,6 +1,6 @@
 package cat.vonblum.mamazone.orders.order.update
 
-import cat.vonblum.mamazone.orders.shared.domain.bus.command.Command
+import cat.vonblum.mamazone.orders.shared.domain.command.Command
 
 class UpdateOrderCommand(
     val id: Int,
