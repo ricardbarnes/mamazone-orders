@@ -1,0 +1,33 @@
+services:
+
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    ports:
+      - 80:8080
+    depends_on:
+      - producer
+      - consumer
+    networks:
+      - mamazone
+
+  consumer:
+    build:
+      context: .
+      dockerfile: consumer/Dockerfile
+    depends_on:
+      - producer
+    networks:
+      - mamazone
+
+  producer:
+    build:
+      context: .
+      dockerfile: producer/Dockerfile
+    networks:
+      - mamazone
+
+networks:
+  mamazone:
+    driver: bridge

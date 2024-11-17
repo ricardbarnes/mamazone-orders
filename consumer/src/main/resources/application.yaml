@@ -1,15 +1,12 @@
-server:
-  port: 8003
-
 bus:
   event:
     socket:
       server:
         port: 10003
 
-producer:
-  bus:
-    command:
-      socket:
-        host: localhost
-        port: 10001
+#producer:
+#  bus:
+#    command:
+#      socket:
+#        host: localhost
+#        port: 10001

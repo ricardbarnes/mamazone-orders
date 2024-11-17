@@ -1,6 +1,3 @@
-server:
-  port: 8002
-
 bus:
   command:
     socket:
@@ -15,5 +12,5 @@ consumer:
   bus:
     event:
       socket:
-        host: localhost
+        host: consumer
         port: 10003
