@@ -2,14 +2,14 @@ bus:
   event:
     socket:
       server:
-        port: 10003
+        port: ${SOCKET_EVENT_BUS_PORT}
 
-#producer:
-#  bus:
-#    command:
-#      socket:
-#        host: localhost
-#        port: 10001
+producer:
+  bus:
+    command:
+      socket:
+        host: ${SOCKET_COMMAND_BUS_HOST}
+        port: ${SOCKET_COMMAND_BUS_PORT}
 
 spring:
   datasource:

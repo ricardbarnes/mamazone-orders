@@ -2,11 +2,11 @@ bus:
   command:
     socket:
       server:
-        port: ${SOCKET_COMMAND_SERVER_PORT}
+        port: ${SOCKET_COMMAND_BUS_PORT}
   query:
     socket:
       server:
-        port: ${SOCKET_QUERY_SERVER_PORT}
+        port: ${SOCKET_QUERY_BUS_PORT}
 
 consumer:
   bus:
