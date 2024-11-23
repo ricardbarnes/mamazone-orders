@@ -4,6 +4,8 @@ services:
     build:
       context: .
       dockerfile: api/Dockerfile
+    ports:
+      - 80:8080
     depends_on:
       - producer
       - consumer
@@ -35,7 +37,24 @@ services:
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: mamazone
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres
+    environment:
+      ADMINER_DEFAULT_SERVER: postgres
 
 networks:
   mamazone:
     driver: bridge
+
+volumes:
+  postgres_data:

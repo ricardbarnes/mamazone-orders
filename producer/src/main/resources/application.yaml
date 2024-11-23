@@ -14,3 +14,9 @@ consumer:
       socket:
         host: consumer
         port: 10003
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mamazone
+    username: postgres
+    password: password
