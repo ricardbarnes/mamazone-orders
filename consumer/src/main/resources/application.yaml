@@ -10,3 +10,9 @@ bus:
 #      socket:
 #        host: localhost
 #        port: 10001
+
+spring:
+  datasource:
+    url: ${POSTGRES_URL}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}

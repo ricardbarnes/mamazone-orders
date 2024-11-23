@@ -1,7 +1,7 @@
 package cat.vonblum.mamazone.orders.api.controller
 
 import cat.vonblum.mamazone.orders.api.mapper.RestOrderMapper
-import cat.vonblum.mamazone.orders.api.model.RestOrder
+import cat.vonblum.mamazone.orders.api.dto.RestOrder
 import cat.vonblum.mamazone.orders.shared.domain.command.CommandBus
 import cat.vonblum.mamazone.orders.shared.domain.query.QueryBus
 import cat.vonblum.mamazone.orders.shared.domain.query.Response

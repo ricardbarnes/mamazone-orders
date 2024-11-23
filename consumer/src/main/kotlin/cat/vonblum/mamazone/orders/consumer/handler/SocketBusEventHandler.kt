@@ -1,7 +1,7 @@
 package cat.vonblum.mamazone.orders.consumer.handler
 
 import cat.vonblum.mamazone.orders.consumer.mapper.SocketEventMapper
-import cat.vonblum.mamazone.orders.shared.domain.event.EventStore
+import cat.vonblum.mamazone.orders.shared.domain.event.EventWriteStore
 import cat.vonblum.mamazone.orders.shared.infrastructure.bus.socket.SocketBusMessage
 import cat.vonblum.mamazone.orders.shared.infrastructure.bus.socket.SocketBusServer
 import java.io.ObjectInputStream
@@ -10,7 +10,7 @@ import java.net.Socket
 class SocketBusEventHandler(
     port: Int,
     private val mapper: SocketEventMapper,
-    private val store: EventStore
+    private val store: EventWriteStore
 ) : SocketBusServer(port) {
 
     override fun handleClient(socket: Socket) {

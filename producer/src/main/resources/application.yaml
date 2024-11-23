@@ -2,21 +2,21 @@ bus:
   command:
     socket:
       server:
-        port: 10001
+        port: ${SOCKET_COMMAND_SERVER_PORT}
   query:
     socket:
       server:
-        port: 10002
+        port: ${SOCKET_QUERY_SERVER_PORT}
 
 consumer:
   bus:
     event:
       socket:
-        host: consumer
-        port: 10003
+        host: ${SOCKET_EVENT_BUS_HOST}
+        port: ${SOCKET_EVENT_BUS_PORT}
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/mamazone
-    username: postgres
-    password: password
+    url: ${POSTGRES_URL}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}

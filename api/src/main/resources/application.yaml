@@ -2,9 +2,9 @@ producer:
   bus:
     command:
       socket:
-        host: producer
-        port: 10001
+        host: ${SOCKET_COMMAND_BUS_HOST}
+        port: ${SOCKET_COMMAND_BUS_PORT}
     query:
       socket:
-        host: producer
-        port: 10002
+        host: ${SOCKET_QUERY_BUS_HOST}
+        port: ${SOCKET_QUERY_BUS_PORT}

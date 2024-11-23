@@ -6,8 +6,8 @@ import org.springframework.context.annotation.ComponentScan
 
 @SpringBootApplication
 @ComponentScan("cat.vonblum.mamazone.orders.consumer")
-class ConsumerEntrypoint
+class SpringConsumerEntrypoint
 
 fun main(args: Array<String>) {
-    SpringApplication.run(ConsumerEntrypoint::class.java, *args);
+    SpringApplication.run(SpringConsumerEntrypoint::class.java, *args);
 }

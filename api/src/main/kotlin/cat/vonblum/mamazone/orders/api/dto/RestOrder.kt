@@ -1,4 +1,4 @@
-package cat.vonblum.mamazone.orders.api.model
+package cat.vonblum.mamazone.orders.api.dto
 
 class RestOrder(
     val id: Int,

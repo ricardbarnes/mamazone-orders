@@ -16,5 +16,5 @@ dependencies {
     implementation(project(":domain:core"))
     implementation(project(":shared:domain"))
     implementation(project(":shared:infrastructure"))
-    implementation("org.springframework.boot:spring-boot-starter:3.3.4")
+    implementation("org.springframework.boot:spring-boot-starter")
 }

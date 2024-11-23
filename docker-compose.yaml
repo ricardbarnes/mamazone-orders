@@ -4,11 +4,18 @@ services:
     build:
       context: .
       dockerfile: api/Dockerfile
+    ports:
+      - 80:8080
     depends_on:
       - producer
       - consumer
     networks:
       - mamazone
+    environment:
+      - SOCKET_COMMAND_BUS_HOST=${SOCKET_COMMAND_BUS_HOST}
+      - SOCKET_COMMAND_BUS_PORT=${SOCKET_COMMAND_BUS_PORT}
+      - SOCKET_QUERY_BUS_HOST=${SOCKET_QUERY_BUS_HOST}
+      - SOCKET_QUERY_BUS_PORT=${SOCKET_QUERY_BUS_PORT}
 
   consumer:
     build:
@@ -28,6 +35,14 @@ services:
       - postgres
     networks:
       - mamazone
+    environment:
+      - SOCKET_COMMAND_SERVER_PORT=${SOCKET_COMMAND_SERVER_PORT}
+      - SOCKET_QUERY_SERVER_PORT=${SOCKET_QUERY_SERVER_PORT}
+      - SOCKET_EVENT_BUS_HOST=${SOCKET_EVENT_BUS_HOST}
+      - SOCKET_EVENT_BUS_PORT=${SOCKET_EVENT_BUS_PORT}
+      - POSTGRES_URL=${POSTGRES_URL}
+      - POSTGRES_USERNAME=${POSTGRES_USERNAME}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
 
   postgres:
     image: postgres
@@ -35,7 +50,24 @@ services:
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: mamazone
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres
+    environment:
+      ADMINER_DEFAULT_SERVER: postgres
 
 networks:
   mamazone:
     driver: bridge
+
+volumes:
+  postgres_data:

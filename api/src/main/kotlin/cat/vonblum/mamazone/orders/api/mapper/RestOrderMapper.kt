@@ -1,6 +1,6 @@
 package cat.vonblum.mamazone.orders.api.mapper
 
-import cat.vonblum.mamazone.orders.api.model.RestOrder
+import cat.vonblum.mamazone.orders.api.dto.RestOrder
 import cat.vonblum.mamazone.orders.order.cancel.CancelOrderCommand
 import cat.vonblum.mamazone.orders.order.create.CreateOrderCommand
 import cat.vonblum.mamazone.orders.order.find.FindOrderQuery
