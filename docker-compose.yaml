@@ -67,6 +67,8 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    networks:
+      - mamazone
 
   # Only for development purposes!
   adminer:
@@ -78,6 +80,8 @@ services:
       - postgres
     environment:
       ADMINER_DEFAULT_SERVER: postgres
+    networks:
+      - mamazone
 
 networks:
   mamazone:
