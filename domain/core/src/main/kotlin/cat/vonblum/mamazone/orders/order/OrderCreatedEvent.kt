@@ -7,6 +7,6 @@ class OrderCreatedEvent(
     override val aggregateId: Int,
     val customerId: Int,
     val productIds: List<Int>,
-    override var eventId: Int = Event.INITIAL_ID,
+    override var id: Int = Event.INITIAL_ID,
     override val occurredOn: Instant = Instant.now()
 ) : Event

@@ -44,4 +44,4 @@ bin/
 #
 #### SQL ###
 #/postgres/*
-#!/postgres/schema.sql
+#!/postgres/04_schema.sql

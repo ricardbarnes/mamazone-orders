@@ -8,3 +8,6 @@ producer:
       socket:
         host: ${SOCKET_QUERY_BUS_HOST}
         port: ${SOCKET_QUERY_BUS_PORT}
+
+server:
+  port: 8081

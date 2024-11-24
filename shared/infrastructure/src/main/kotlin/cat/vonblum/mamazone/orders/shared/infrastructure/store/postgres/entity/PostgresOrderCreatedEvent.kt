@@ -5,16 +5,8 @@ import jakarta.persistence.*
 import java.time.Instant
 
 @Entity
-@Table(name = "order_created_event")
+@Table(name = "order_created_events")
 data class PostgresOrderCreatedEvent(
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    val id: Int,
-
-    @Column(name = "aggregate_id", nullable = false)
-    val aggregateId: Int,
 
     @Column(name = "customer_id", nullable = false)
     val customerId: Int,
@@ -23,16 +15,20 @@ data class PostgresOrderCreatedEvent(
     @Convert(converter = PostgresIntListToStringConverter::class)
     val productIds: List<Int>,
 
-    @Column(name = "occurred_on", nullable = false)
-    val occurredOn: Instant
-
+    override val id: Int,
+    override val aggregateId: Int,
+    override val occurredOn: Instant = Instant.now()
+) : PostgresEvent(
+    id,
+    aggregateId,
+    occurredOn
 ) {
 
     constructor() : this(
-        id = 0,
-        aggregateId = 0,
         customerId = 0,
         productIds = emptyList(),
+        id = 0,
+        aggregateId = 0,
         occurredOn = Instant.now()
     )
 

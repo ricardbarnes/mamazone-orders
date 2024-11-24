@@ -27,7 +27,7 @@ class SocketEventMapper {
             orderCreatedEvent.aggregateId,
             orderCreatedEvent.customerId,
             orderCreatedEvent.productIds,
-            orderCreatedEvent.eventId,
+            orderCreatedEvent.id,
             orderCreatedEvent.occurredOn
         )
     }
@@ -35,7 +35,7 @@ class SocketEventMapper {
     private fun toSocket(orderCanceledEvent: OrderCanceledEvent): SocketOrderCanceledEvent {
         return SocketOrderCanceledEvent(
             orderCanceledEvent.aggregateId,
-            orderCanceledEvent.eventId,
+            orderCanceledEvent.id,
             orderCanceledEvent.occurredOn
         )
     }
@@ -45,7 +45,7 @@ class SocketEventMapper {
             orderModifiedEvent.aggregateId,
             orderModifiedEvent.customerId,
             orderModifiedEvent.productIds,
-            orderModifiedEvent.eventId,
+            orderModifiedEvent.id,
             orderModifiedEvent.occurredOn
         )
     }

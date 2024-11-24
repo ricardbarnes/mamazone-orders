@@ -20,3 +20,6 @@ spring:
     url: ${POSTGRES_URL}
     username: ${POSTGRES_USERNAME}
     password: ${POSTGRES_PASSWORD}
+
+server:
+  port: 8082

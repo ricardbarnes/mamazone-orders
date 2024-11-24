@@ -1,4 +1,4 @@
-CREATE TABLE order_created_event
+CREATE TABLE IF NOT EXISTS order_created_events
 (
     id           SERIAL PRIMARY KEY,
     aggregate_id INT       NOT NULL,

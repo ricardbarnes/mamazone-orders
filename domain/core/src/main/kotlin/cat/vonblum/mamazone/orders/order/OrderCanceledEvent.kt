@@ -5,6 +5,6 @@ import java.time.Instant
 
 class OrderCanceledEvent(
     override val aggregateId: Int,
-    override var eventId: Int = Event.INITIAL_ID,
+    override var id: Int = Event.INITIAL_ID,
     override val occurredOn: Instant = Instant.now()
 ) : Event
