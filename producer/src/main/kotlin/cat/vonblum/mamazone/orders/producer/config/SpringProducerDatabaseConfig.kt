@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.datasource.DriverManagerDataSource
 
 @Configuration
-class SpringDatabaseConfig {
+class SpringProducerDatabaseConfig {
 
     @Bean
     fun driverManagerDataSource(
