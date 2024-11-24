@@ -38,5 +38,10 @@ bin/
 ### Mac OS ###
 .DS_Store
 
-### Docker ###
-.env
+### REQUIRED IGNORES IN AN ACTUAL PROJECT (JUST COMMENTED IN HERE) ###
+#### Docker ###
+#.env
+#
+#### SQL ###
+#/postgres/*
+#!/postgres/schema.sql
