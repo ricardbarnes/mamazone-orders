@@ -43,6 +43,20 @@ services:
       - SOCKET_EVENT_BUS_HOST=${SOCKET_EVENT_BUS_HOST}
       - SOCKET_EVENT_BUS_PORT=${SOCKET_EVENT_BUS_PORT}
 
+  mongo:
+    image: mongo
+    restart: always
+    volumes:
+      - mongodb_data:/data/db
+    ports:
+      - 27020:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGODB_INIT_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INIT_ROOT_PASSWORD}
+
 networks:
   mamazone:
     driver: bridge
+
+volumes:
+  mongodb_data:
