@@ -24,28 +24,28 @@ class SocketEventMapper {
 
     private fun toSocket(orderCreatedEvent: OrderCreatedEvent): SocketOrderCreatedEvent {
         return SocketOrderCreatedEvent(
-            orderCreatedEvent.aggregateId,
-            orderCreatedEvent.customerId,
-            orderCreatedEvent.productIds,
-            orderCreatedEvent.id,
+            orderCreatedEvent.aggregateId.value,
+            orderCreatedEvent.customerId.value,
+            orderCreatedEvent.productIds.map { it.value },
+            orderCreatedEvent.id.value,
             orderCreatedEvent.occurredOn
         )
     }
 
     private fun toSocket(orderCanceledEvent: OrderCanceledEvent): SocketOrderCanceledEvent {
         return SocketOrderCanceledEvent(
-            orderCanceledEvent.aggregateId,
-            orderCanceledEvent.id,
+            orderCanceledEvent.aggregateId.value,
+            orderCanceledEvent.id.value,
             orderCanceledEvent.occurredOn
         )
     }
 
     private fun toSocket(orderModifiedEvent: OrderModifiedEvent): SocketOrderModifiedEvent {
         return SocketOrderModifiedEvent(
-            orderModifiedEvent.aggregateId,
-            orderModifiedEvent.customerId,
-            orderModifiedEvent.productIds,
-            orderModifiedEvent.id,
+            orderModifiedEvent.aggregateId.value,
+            orderModifiedEvent.customerId.value,
+            orderModifiedEvent.productIds.map { it.value },
+            orderModifiedEvent.id.value,
             orderModifiedEvent.occurredOn
         )
     }

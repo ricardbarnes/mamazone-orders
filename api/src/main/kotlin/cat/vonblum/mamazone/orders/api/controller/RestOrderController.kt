@@ -7,6 +7,7 @@ import cat.vonblum.mamazone.orders.shared.domain.query.QueryBus
 import cat.vonblum.mamazone.orders.shared.domain.query.Response
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
+import java.util.UUID
 
 @RestController
 @RequestMapping("/orders")
@@ -22,7 +23,7 @@ class RestOrderController(
         commandBus.dispatch(mapper.toCreateCommand(dto))
 
     @GetMapping("/{id}")
-    fun getById(@PathVariable id: Int): Response? =
+    fun getById(@PathVariable id: UUID): Response? =
         queryBus.ask(mapper.toFindQuery(id))
 
     @PutMapping
@@ -31,7 +32,7 @@ class RestOrderController(
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    fun cancel(@PathVariable id: Int): Unit =
+    fun cancel(@PathVariable id: UUID): Unit =
         commandBus.dispatch(mapper.toCancelCommand(id))
 
 }

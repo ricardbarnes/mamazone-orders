@@ -41,7 +41,3 @@ bin/
 ### REQUIRED IGNORES IN AN ACTUAL PROJECT (JUST COMMENTED IN HERE) ###
 #### Docker ###
 #.env
-#
-#### SQL ###
-#/postgres/*
-#!/postgres/04_schema.sql

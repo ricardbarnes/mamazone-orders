@@ -1,8 +1,10 @@
 package cat.vonblum.mamazone.orders.api.dto
 
+import java.util.UUID
+
 class RestOrder(
-    val id: Int,
+    val id: UUID,
     val status: String,
-    val customerId: Int,
-    val productIds: List<Int>
+    val customerId: UUID,
+    val productIds: List<UUID>
 )

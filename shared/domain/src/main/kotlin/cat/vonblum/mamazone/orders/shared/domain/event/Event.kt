@@ -1,27 +1,14 @@
 package cat.vonblum.mamazone.orders.shared.domain.event
 
+import cat.vonblum.mamazone.orders.shared.domain.valueobject.Id
 import java.time.Instant
 
 interface Event {
 
-    companion object {
+    val aggregateId: Id
 
-        const val INITIAL_ID = -1
-
-    }
-
-    val aggregateId: Int
-
-    var id: Int
+    var id: Id
 
     val occurredOn: Instant
-
-    fun assignId(id: Int) {
-        if (this.id != INITIAL_ID) {
-            throw IllegalStateException("Event ID cannot be reassigned.")
-        }
-
-        this.id = id
-    }
 
 }

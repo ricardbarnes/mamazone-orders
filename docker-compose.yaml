@@ -12,6 +12,7 @@ services:
     networks:
       - mamazone
     environment:
+      - API_APP_PORT=${API_APP_PORT}
       - SOCKET_COMMAND_BUS_HOST=${SOCKET_COMMAND_BUS_HOST}
       - SOCKET_COMMAND_BUS_PORT=${SOCKET_COMMAND_BUS_PORT}
       - SOCKET_QUERY_BUS_HOST=${SOCKET_QUERY_BUS_HOST}
@@ -23,23 +24,17 @@ services:
       dockerfile: consumer/Dockerfile
     depends_on:
       - producer
-      - postgres
     networks:
       - mamazone
     environment:
       - SOCKET_EVENT_BUS_PORT=${SOCKET_EVENT_BUS_PORT}
       - SOCKET_COMMAND_BUS_HOST=${SOCKET_COMMAND_BUS_HOST}
       - SOCKET_COMMAND_BUS_PORT=${SOCKET_COMMAND_BUS_PORT}
-      - POSTGRES_URL=${POSTGRES_URL}
-      - POSTGRES_USERNAME=${POSTGRES_USERNAME}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
 
   producer:
     build:
       context: .
       dockerfile: producer/Dockerfile
-    depends_on:
-      - postgres
     networks:
       - mamazone
     environment:
@@ -47,45 +42,7 @@ services:
       - SOCKET_QUERY_BUS_PORT=${SOCKET_QUERY_BUS_PORT}
       - SOCKET_EVENT_BUS_HOST=${SOCKET_EVENT_BUS_HOST}
       - SOCKET_EVENT_BUS_PORT=${SOCKET_EVENT_BUS_PORT}
-      - POSTGRES_URL=${POSTGRES_URL}
-      - POSTGRES_USERNAME=${POSTGRES_USERNAME}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-
-  postgres:
-    image: postgres
-    restart: always
-    environment:
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
-    ports:
-      - 5432:5432
-    volumes:
-      - ./postgres:/docker-entrypoint-initdb.d/
-      - postgres_data:/var/lib/postgresql/data
-    healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
-      interval: 5s
-      timeout: 5s
-      retries: 5
-    networks:
-      - mamazone
-
-  # Only for development purposes!
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
-    depends_on:
-      - postgres
-    environment:
-      ADMINER_DEFAULT_SERVER: postgres
-    networks:
-      - mamazone
 
 networks:
   mamazone:
     driver: bridge
-
-volumes:
-  postgres_data:

@@ -1,12 +1,10 @@
 package cat.vonblum.mamazone.orders.producer.config
 
-import cat.vonblum.mamazone.orders.producer.bus.SocketEventBus
 import cat.vonblum.mamazone.orders.producer.handler.SocketBusCommandHandler
 import cat.vonblum.mamazone.orders.producer.handler.SocketBusQueryHandler
 import cat.vonblum.mamazone.orders.producer.mapper.SocketCommandMapper
 import cat.vonblum.mamazone.orders.producer.mapper.SocketEventMapper
 import cat.vonblum.mamazone.orders.producer.mapper.SocketQueryMapper
-import cat.vonblum.mamazone.orders.shared.domain.event.EventBus
 import cat.vonblum.mamazone.orders.shared.domain.handler.Handler
 import cat.vonblum.mamazone.orders.shared.infrastructure.bus.socket.SocketBusServer
 import org.springframework.beans.factory.annotation.Value

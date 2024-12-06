@@ -6,6 +6,7 @@ import cat.vonblum.mamazone.orders.order.create.CreateOrderCommand
 import cat.vonblum.mamazone.orders.order.find.FindOrderQuery
 import cat.vonblum.mamazone.orders.order.update.UpdateOrderCommand
 import org.springframework.stereotype.Component
+import java.util.UUID
 
 @Component
 class RestOrderMapper {
@@ -25,10 +26,10 @@ class RestOrderMapper {
             restDto.productIds
         )
 
-    fun toCancelCommand(id: Int): CancelOrderCommand =
+    fun toCancelCommand(id: UUID): CancelOrderCommand =
         CancelOrderCommand(id)
 
-    fun toFindQuery(int: Int): FindOrderQuery =
+    fun toFindQuery(int: UUID): FindOrderQuery =
         FindOrderQuery(int)
 
 }

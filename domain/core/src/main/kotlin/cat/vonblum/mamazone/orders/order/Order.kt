@@ -20,9 +20,9 @@ class Order(
         ).also { order ->
             order.record(
                 OrderCreatedEvent(
-                    id.value,
-                    customerId.value,
-                    productIds.stream().map { productId -> productId.value }.collect(Collectors.toList())
+                    id,
+                    customerId,
+                    productIds.stream().map { productId -> productId }.collect(Collectors.toList())
                 )
             )
         }
@@ -31,9 +31,9 @@ class Order(
 
     private fun recordModification() = this.record(
         OrderModifiedEvent(
-            this.id.value,
-            this.customerId.value,
-            this.productIds.stream().map { productId -> productId.value }.collect(Collectors.toList())
+            this.id,
+            this.customerId,
+            this.productIds.stream().map { productId -> productId }.collect(Collectors.toList())
         )
     )
 
@@ -59,7 +59,7 @@ class Order(
         this.status = OrderStatus.CANCELED
         this.record(
             OrderCanceledEvent(
-                this.id.value
+                this.id
             )
         )
     }

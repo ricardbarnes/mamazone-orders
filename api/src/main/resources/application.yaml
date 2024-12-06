@@ -10,4 +10,4 @@ producer:
         port: ${SOCKET_QUERY_BUS_PORT}
 
 server:
-  port: 8081
+  port: ${API_APP_PORT}

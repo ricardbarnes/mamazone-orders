@@ -3,8 +3,12 @@ package cat.vonblum.mamazone.orders.consumer.mapper
 import cat.vonblum.mamazone.orders.consumer.exception.SocketEventMapperException
 import cat.vonblum.mamazone.orders.order.OrderCanceledEvent
 import cat.vonblum.mamazone.orders.order.OrderCreatedEvent
+import cat.vonblum.mamazone.orders.order.OrderId
 import cat.vonblum.mamazone.orders.order.OrderModifiedEvent
+import cat.vonblum.mamazone.orders.shared.CustomerId
+import cat.vonblum.mamazone.orders.shared.ProductId
 import cat.vonblum.mamazone.orders.shared.domain.event.Event
+import cat.vonblum.mamazone.orders.shared.domain.valueobject.Id
 import cat.vonblum.mamazone.orders.shared.infrastructure.bus.socket.SocketBusMessage
 import cat.vonblum.mamazone.orders.shared.infrastructure.bus.socket.event.SocketOrderCanceledEvent
 import cat.vonblum.mamazone.orders.shared.infrastructure.bus.socket.event.SocketOrderCreatedEvent
@@ -26,28 +30,28 @@ class SocketEventMapper {
 
     private fun toDomain(socketEvent: SocketOrderCreatedEvent): OrderCreatedEvent {
         return OrderCreatedEvent(
-            socketEvent.aggregateId,
-            socketEvent.customerId,
-            socketEvent.productIds,
-            socketEvent.eventId,
+            OrderId(socketEvent.aggregateId),
+            CustomerId(socketEvent.customerId),
+            socketEvent.productIds.map { ProductId(it) },
+            Id(socketEvent.eventId),
             socketEvent.occurredOn
         )
     }
 
     private fun toDomain(socketEvent: SocketOrderModifiedEvent): OrderModifiedEvent {
         return OrderModifiedEvent(
-            socketEvent.aggregateId,
-            socketEvent.customerId,
-            socketEvent.productIds,
-            socketEvent.eventId,
+            OrderId(socketEvent.aggregateId),
+            CustomerId(socketEvent.customerId),
+            socketEvent.productIds.map { ProductId(it) },
+            Id(socketEvent.eventId),
             socketEvent.occurredOn
         )
     }
 
     private fun toDomain(socketEvent: SocketOrderCanceledEvent): OrderCanceledEvent {
         return OrderCanceledEvent(
-            socketEvent.aggregateId,
-            socketEvent.eventId,
+            OrderId(socketEvent.aggregateId),
+            Id(socketEvent.eventId),
             socketEvent.occurredOn
         )
     }
